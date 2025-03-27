@@ -1,7 +1,6 @@
 package com.scudata.expression.fn.string;
 
 import java.io.UnsupportedEncodingException;
-import javax.xml.bind.DatatypeConverter;
 
 import com.scudata.common.MessageManager;
 import com.scudata.common.RQException;
@@ -31,9 +30,9 @@ public class Base64 extends Function {
 		if (param.isLeaf()) {
 			Object val = param.getLeafExpression().calculate(ctx);
 			if (val instanceof String) {
-				return DatatypeConverter.parseBase64Binary((String)val);
+				return java.util.Base64.getDecoder().decode((String)val);
 			} else if (val instanceof byte[]) {
-				return DatatypeConverter.printBase64Binary((byte[])val);
+				return java.util.Base64.getDecoder().decode((byte[])val);
 			} else if (val == null) {
 				return null;
 			} else {
@@ -70,9 +69,9 @@ public class Base64 extends Function {
 			try {
 				if (param.getType() == IParam.Colon) {
 					byte []bytes = value.getBytes(cs);
-					return DatatypeConverter.printBase64Binary(bytes);
+					return java.util.Base64.getEncoder().encodeToString(bytes);
 				} else {
-					byte []bytes = DatatypeConverter.parseBase64Binary(value);
+					byte []bytes = java.util.Base64.getDecoder().decode(value);
 					return new String(bytes, cs);
 				}
 			} catch (UnsupportedEncodingException e) {
