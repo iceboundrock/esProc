@@ -18,8 +18,8 @@ import com.scudata.server.StartUnitListener;
 import java.text.*;
 
 /**
- * ·ÇÍ¼ĞÎ·şÎñÆ÷
- * ²»ÄÜµ÷ÓÃGMµÈideµÄÀà£¬ ·Ö»ú
+ * éå›¾å½¢æœåŠ¡å™¨
+ * ä¸èƒ½è°ƒç”¨GMç­‰ideçš„ç±»ï¼Œ åˆ†æœº
  * 
  * @author Joancy
  *
@@ -36,7 +36,7 @@ public class UnitServer implements IServer {
 	
 	private volatile boolean stop = true;
 
-//	exeÆô¶¯Ê±Ö¸¶¨²ÎÊı
+//	exeå¯åŠ¨æ—¶æŒ‡å®šå‚æ•°
 	private String specifyHost=null;
 	private int specifyPort = 0;
 		
@@ -49,27 +49,27 @@ public class UnitServer implements IServer {
 	private static Response initResult = new Response();
 	
 	/**
-	 * ÉèÖÃ»·¾³ÅäÖÃ
+	 * è®¾ç½®ç¯å¢ƒé…ç½®
 	 */
 	public void setRaqsoftConfig(RaqsoftConfig rc){
 		this.rc = rc;
 	}
 	/**
-	 * »ñÈ¡»·¾³²ÎÊıÅäÖÃ¶ÔÏó
+	 * è·å–ç¯å¢ƒå‚æ•°é…ç½®å¯¹è±¡
 	 */
 	public RaqsoftConfig getRaqsoftConfig(){
 		return rc;
 	}
 	
 	/**
-	 * ÉèÖÃ·şÎñÆ÷×´Ì¬ÕìÌıÀà
+	 * è®¾ç½®æœåŠ¡å™¨çŠ¶æ€ä¾¦å¬ç±»
 	 */
 	public void setStartUnitListener(StartUnitListener listen){
 		listener = listen;
 	}
 	
 	/**
-	 * »ñÈ¡¼ÆËã»·¾³ÉÏÏÂÎÄ
+	 * è·å–è®¡ç®—ç¯å¢ƒä¸Šä¸‹æ–‡
 	 * @return
 	 */
 	public UnitContext getUnitContext() {
@@ -88,9 +88,9 @@ public class UnitServer implements IServer {
 	}
 	
 	/**
-	 * ·Ö»ú·şÎñÆ÷ÄÚ²¿²úÉúÎ¨Ò»±àºÅ
-	 * ÓÃÓÚ´úÀíºÅµÈ¸÷ÖÖ²»ÄÜÍ¬ºÅµÄµØ·½
-	 * @return ·şÎñÆ÷ÄÚÎ¨Ò»±àºÅ
+	 * åˆ†æœºæœåŠ¡å™¨å†…éƒ¨äº§ç”Ÿå”¯ä¸€ç¼–å·
+	 * ç”¨äºä»£ç†å·ç­‰å„ç§ä¸èƒ½åŒå·çš„åœ°æ–¹
+	 * @return æœåŠ¡å™¨å†…å”¯ä¸€ç¼–å·
 	 */
 	public static int nextId() {
 		synchronized (idLock) {
@@ -104,8 +104,8 @@ public class UnitServer implements IServer {
 	}
 
 	/**
-	 * ´ò³öÄÚ´æÕ¼ÓÃÂÊ£¬ÓÃÓÚµ÷ÊÔ
-	 * @param msg ÏÔÊ¾µÄÏûÏ¢
+	 * æ‰“å‡ºå†…å­˜å ç”¨ç‡ï¼Œç”¨äºè°ƒè¯•
+	 * @param msg æ˜¾ç¤ºçš„æ¶ˆæ¯
 	 */
 	public static void debugMemory(String msg) {
 		DecimalFormat df = new DecimalFormat("###,###");
@@ -130,9 +130,9 @@ public class UnitServer implements IServer {
 	}
 
 	/**
-	 * Ö´ĞĞ·Ö»úµÄÇëÇó
-	 * @param req ÇëÇó¶ÔÏó
-	 * @return ÏìÓ¦½á¹û
+	 * æ‰§è¡Œåˆ†æœºçš„è¯·æ±‚
+	 * @param req è¯·æ±‚å¯¹è±¡
+	 * @return å“åº”ç»“æœ
 	 */
 	public Response execute(Request req) {
 		Response res = new Response();
@@ -221,8 +221,8 @@ public class UnitServer implements IServer {
 	}
 
 	/**
-	 * »ñÈ¡·Ö»úÎ¨Ò»ÊµÀı£¬´ÓÅäÖÃÎÄ¼şË³Ğò²úÉú
-	 * @return ·Ö»ú·şÎñÆ÷ÊµÀı
+	 * è·å–åˆ†æœºå”¯ä¸€å®ä¾‹ï¼Œä»é…ç½®æ–‡ä»¶é¡ºåºäº§ç”Ÿ
+	 * @return åˆ†æœºæœåŠ¡å™¨å®ä¾‹
 	 * @throws Exception
 	 */
 	public static UnitServer getInstance() throws Exception {
@@ -230,10 +230,10 @@ public class UnitServer implements IServer {
 	}
 	
 	/**
-	 * Æô¶¯»òÕß»ñÈ¡Ö¸¶¨µØÖ·µÄ·Ö»ú
-	 * @param specifyHost IPµØÖ·
-	 * @param specifyPort ¶Ë¿ÚºÅ
-	 * @return ·Ö»úÊµÀı
+	 * å¯åŠ¨æˆ–è€…è·å–æŒ‡å®šåœ°å€çš„åˆ†æœº
+	 * @param specifyHost IPåœ°å€
+	 * @param specifyPort ç«¯å£å·
+	 * @return åˆ†æœºå®ä¾‹
 	 * @throws Exception
 	 */
 	public static UnitServer getInstance(String specifyHost, int specifyPort) throws Exception {
@@ -263,15 +263,15 @@ public class UnitServer implements IServer {
 	
 	
 	/**
-	 * ·şÎñÆ÷ÊÇ·ñÕıÔÚ³õÊ¼»¯»·¾³
-	 * @return ³õÊ¼»¯Ê±·µ»Øtrue£¬·ñÔò·µ»Øfalse
+	 * æœåŠ¡å™¨æ˜¯å¦æ­£åœ¨åˆå§‹åŒ–ç¯å¢ƒ
+	 * @return åˆå§‹åŒ–æ—¶è¿”å›trueï¼Œå¦åˆ™è¿”å›false
 	 */
 	public static boolean isIniting(){
 		return isIniting;
 	}
 	
 	/**
-	 * ¼ì²éÉÏÏÂÎÄµÄÉèÖÃ
+	 * æ£€æŸ¥ä¸Šä¸‹æ–‡çš„è®¾ç½®
 	 * @throws Exception
 	 */
 	public void checkContext() throws Exception{
@@ -282,10 +282,10 @@ public class UnitServer implements IServer {
 	}
 	
 	/**
-	 * Ê¹ÓÃ²ÎÊıµ÷ÓÃ·Ö»úµÄ³õÊ¼»¯ÎÄ¼şinit.splx
-	 * @param i£¬µÚi¸ö·Ö»ú£¬i=0±íÊ¾·Ö»úÆô¶¯Ê±¿ÌµÄµ÷ÓÃ
-	 * @param N£¬¹²N¸ö·Ö»ú
-	 * @param j£¬ÈÎÎñÃû³Æ
+	 * ä½¿ç”¨å‚æ•°è°ƒç”¨åˆ†æœºçš„åˆå§‹åŒ–æ–‡ä»¶init.splx
+	 * @param iï¼Œç¬¬iä¸ªåˆ†æœºï¼Œi=0è¡¨ç¤ºåˆ†æœºå¯åŠ¨æ—¶åˆ»çš„è°ƒç”¨
+	 * @param Nï¼Œå…±Nä¸ªåˆ†æœº
+	 * @param jï¼Œä»»åŠ¡åç§°
 	 * @return
 	 */
 	public static Response init(final int i, final int N, final String j){
@@ -300,11 +300,11 @@ public class UnitServer implements IServer {
 	}
 	
 	/**
-	 * Ö´ĞĞ³õÊ¼»¯init.dfx½Å±¾
-	 * @param z ·Ö»úµÄĞòºÅ
-	 * @param N ×Ü¹²ÓĞ¼¸Ì¨·Ö»ú
-	 * @param waitResult ÊÇ·ñµÈ´ı³õÊ¼»¯½á¹û£¬½çÃæ¿ØÖÆÌ¨²»µÈ£¬·ÇÍ¼ĞÎ¿ØÖÆÌ¨µÈ´ı
-	 * ½çÃæ¿ØÖÆÌ¨Èç¹ûµÈ´ı·µ»Ø½á¹û£¬Ôò»áÔì³É½çÃæ±»ËøËÀ
+	 * æ‰§è¡Œåˆå§‹åŒ–init.dfxè„šæœ¬
+	 * @param z åˆ†æœºçš„åºå·
+	 * @param N æ€»å…±æœ‰å‡ å°åˆ†æœº
+	 * @param waitResult æ˜¯å¦ç­‰å¾…åˆå§‹åŒ–ç»“æœï¼Œç•Œé¢æ§åˆ¶å°ä¸ç­‰ï¼Œéå›¾å½¢æ§åˆ¶å°ç­‰å¾…
+	 * ç•Œé¢æ§åˆ¶å°å¦‚æœç­‰å¾…è¿”å›ç»“æœï¼Œåˆ™ä¼šé€ æˆç•Œé¢è¢«é”æ­»
 	 * @return
 	 */
 	public static Response init(final int i,final int N, final String j, final boolean waitResult){
@@ -340,7 +340,7 @@ public class UnitServer implements IServer {
 				args.add(j);
 				String spaceId = UUID.randomUUID().toString();
 				Task task = new Task(dfx, args, intId, spaceId);
-				// TaskÒ²»á´òÓ¡¿ªÊ¼½áÊø
+				// Taskä¹Ÿä¼šæ‰“å°å¼€å§‹ç»“æŸ
 				initResult = task.execute();
 				Logger.debug(msg+" finished.");
 				synchronized (initLock) {
@@ -364,7 +364,7 @@ public class UnitServer implements IServer {
 	}
 	
 	/**
-	 * ÔËĞĞ·Ö»ú£¬Æô¶¯·şÎñ
+	 * è¿è¡Œåˆ†æœºï¼Œå¯åŠ¨æœåŠ¡
 	 */
 	public void run(){
 		Logger.info("Release date:"+version);
@@ -425,16 +425,16 @@ public class UnitServer implements IServer {
 				uw.start();
 				isThreadStart = true;
 			} catch (java.net.SocketTimeoutException ste) {
-//	·şÎñ¶Ë½ÓÊÜ¿Í»§¶Ësocket£¬3Ãëºó³¬Ê±£¬ÔÙÑ­»·¡£Áô³ö¼ÌĞøÅÜµÄÊ±¼ä¹©ÉèÖÃstopºó½áÊø·şÎñ£¬¸ÃÒì³£ÏûÏ¢²»ÔÚ¿ØÖÆÌ¨Êä³ö			
+//	æœåŠ¡ç«¯æ¥å—å®¢æˆ·ç«¯socketï¼Œ3ç§’åè¶…æ—¶ï¼Œå†å¾ªç¯ã€‚ç•™å‡ºç»§ç»­è·‘çš„æ—¶é—´ä¾›è®¾ç½®stopåç»“æŸæœåŠ¡ï¼Œè¯¥å¼‚å¸¸æ¶ˆæ¯ä¸åœ¨æ§åˆ¶å°è¾“å‡º			
 			} catch (InterruptedIOException e) {
 				e.printStackTrace();
 			} catch (java.net.SocketException se) {
 				se.printStackTrace();
-			} catch (Throwable t) {//»òÕßÄÚ´æÒç³öÊ±
-				t.printStackTrace(); // Ä³¸ösocketµÄÁ÷Òì³£Ê±£¬²»ÄÜµ¹·şÎñÆ÷
+			} catch (Throwable t) {//æˆ–è€…å†…å­˜æº¢å‡ºæ—¶
+				t.printStackTrace(); // æŸä¸ªsocketçš„æµå¼‚å¸¸æ—¶ï¼Œä¸èƒ½å€’æœåŠ¡å™¨
 			}finally{
 				if(socket!=null && !isThreadStart){
-//					Èç¹ûÏß³ÌÆô¶¯ÒÔÇ°¾ÍÒÑ¾­Òì³££¬ÔòÔÚÕâÀï¹Ø±Õsocket
+//					å¦‚æœçº¿ç¨‹å¯åŠ¨ä»¥å‰å°±å·²ç»å¼‚å¸¸ï¼Œåˆ™åœ¨è¿™é‡Œå…³é—­socket
 					try {
 						socket.close();
 					} catch (IOException e) {
@@ -465,10 +465,10 @@ public class UnitServer implements IServer {
 		if( isQuit ) {
 			System.exit(0);
 		}
-	} // Æô¶¯·şÎñ
+	} // å¯åŠ¨æœåŠ¡
 
 	/**
-	 * ÅĞ¶Ïµ±Ç°·şÎñÆ÷ÊÇ·ñÕıÔÚÔËĞĞÖĞ
+	 * åˆ¤æ–­å½“å‰æœåŠ¡å™¨æ˜¯å¦æ­£åœ¨è¿è¡Œä¸­
 	 */
 	public synchronized boolean isRunning() {
 		return !stop;
@@ -483,22 +483,22 @@ public class UnitServer implements IServer {
 
 	boolean isQuit = false;
 	/**
-	 * ÍË³ö·şÎñÆ÷
+	 * é€€å‡ºæœåŠ¡å™¨
 	 */
 	public void quit(){
 		isQuit = true;
 	}
 	
 	/**
-	 * Í£Ö¹·şÎñÆ÷
+	 * åœæ­¢æœåŠ¡å™¨
 	 */
 	public void shutDown() {
 		stop = true;
-	} // ÖÕÖ¹ËùÓĞ·şÎñÏß³Ì£¬Á¢¼´¹Ø±Õ·şÎñÆ÷
+	} // ç»ˆæ­¢æ‰€æœ‰æœåŠ¡çº¿ç¨‹ï¼Œç«‹å³å…³é—­æœåŠ¡å™¨
 
 	/**
-	 * »ñÈ¡·şÎñÆ÷µÄhomeÂ·¾¶
-	 * @return homeÂ·¾¶
+	 * è·å–æœåŠ¡å™¨çš„homeè·¯å¾„
+	 * @return homeè·¯å¾„
 	 */
 	public static String getHome() {
 		String home = System.getProperty("start.home");
@@ -509,8 +509,8 @@ public class UnitServer implements IServer {
 	}
 
 	/**
-	 * ·şÎñÆ÷Èë¿Úº¯Êı
-	 * @param args Æô¶¯²ÎÊı
+	 * æœåŠ¡å™¨å…¥å£å‡½æ•°
+	 * @param args å¯åŠ¨å‚æ•°
 	 */
 	public static void main(String[] args) {
 		try {
@@ -520,7 +520,7 @@ public class UnitServer implements IServer {
 			
 			for (int i = 0; i < args.length; i++) {
 				String buf = args[i];
-//				´ÓHostManager·¢¹ıÀ´µÄ²ÎÊı£¬µ½ÁËÕâÀï±ä³ÉÒ»¸ö¿Õ¸ñ·Ö¿ªµÄ´®£¬ÔÙ´Î½â¿ª
+//				ä»HostManagerå‘è¿‡æ¥çš„å‚æ•°ï¼Œåˆ°äº†è¿™é‡Œå˜æˆä¸€ä¸ªç©ºæ ¼åˆ†å¼€çš„ä¸²ï¼Œå†æ¬¡è§£å¼€
 				if(buf.indexOf(" ")>-1){
 					StringTokenizer st = new StringTokenizer(buf," ");
 					while(st.hasMoreTokens()){
@@ -551,22 +551,22 @@ public class UnitServer implements IServer {
 	}
 
 	/**
-	 * »ñÈ¡µ±Ç°·şÎñÆ÷µÄHost
+	 * è·å–å½“å‰æœåŠ¡å™¨çš„Host
 	 */
 	public String getHost() {
 		return unitContext.toString();
 	}
 
 	/**
-	 * »ñÈ¡·Ö»úIP
-	 * @return ipµØÖ·
+	 * è·å–åˆ†æœºIP
+	 * @return ipåœ°å€
 	 */
 	public String getIP() {
 		return unitContext.getLocalHost();
 	}
 	
 	/**
-	 * µ±Ç°·şÎñÆ÷ÊÇ·ñÊÇ×Ô¶¯Æô¶¯µÄ
+	 * å½“å‰æœåŠ¡å™¨æ˜¯å¦æ˜¯è‡ªåŠ¨å¯åŠ¨çš„
 	 */
 	public boolean isAutoStart() {
 		try{

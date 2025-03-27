@@ -67,7 +67,7 @@ import com.scudata.server.unit.UnitServer;
 import com.scudata.util.Variant;
 
 /**
- * Í¼ĞÎ½çÃæµÄ·şÎñÆ÷Ö÷³ÌĞò
+ * å›¾å½¢ç•Œé¢çš„æœåŠ¡å™¨ä¸»ç¨‹åº
  * 
  * @author Joancy
  *
@@ -142,7 +142,7 @@ public class UnitServerConsole extends AppFrame implements StartUnitListener {
 	}
 
 	/**
-	 * ³õÊ¼»¯½çÃæÓïÑÔ
+	 * åˆå§‹åŒ–ç•Œé¢è¯­è¨€
 	 */
 	public static void initLang() {
 		try {
@@ -159,12 +159,12 @@ public class UnitServerConsole extends AppFrame implements StartUnitListener {
 	}
 
 	/**
-	 * Æô¶¯Ö¸¶¨µØÖ·µÄ·Ö»ú·şÎñÆ÷
+	 * å¯åŠ¨æŒ‡å®šåœ°å€çš„åˆ†æœºæœåŠ¡å™¨
 	 * 
 	 * @param specifyHost
-	 *            IPµØÖ·
+	 *            IPåœ°å€
 	 * @param specifyPort
-	 *            ¶Ë¿ÚºÅ
+	 *            ç«¯å£å·
 	 */
 	public UnitServerConsole(String specifyHost, int specifyPort) {
 		setTitle(UNITSERVER);
@@ -221,7 +221,7 @@ public class UnitServerConsole extends AppFrame implements StartUnitListener {
 		if(StringUtils.isValidString(httpEnabled)) {
 			hb = Boolean.parseBoolean(httpEnabled);
 		}
-		// Ã¿¸ö·şÎñÆ÷µÄÆô¶¯×´Ì¬£¬ÒªÉèÖÃµ½µ±Ç°µÄ½çÃæ£¬±ÈÈçÏÔÊ¾¶Ë¿ÚºÅ£»ËùÒÔÏÂÃæµÄÆô¶¯·şÎñÆ÷£¬Ö»ÄÜ´®ĞĞ£¬Ò»¸öÆô¶¯Íê³Éºó£¬²ÅÄÜÆô¶¯ÏÂÒ»¸ö·şÎñ¡£
+		// æ¯ä¸ªæœåŠ¡å™¨çš„å¯åŠ¨çŠ¶æ€ï¼Œè¦è®¾ç½®åˆ°å½“å‰çš„ç•Œé¢ï¼Œæ¯”å¦‚æ˜¾ç¤ºç«¯å£å·ï¼›æ‰€ä»¥ä¸‹é¢çš„å¯åŠ¨æœåŠ¡å™¨ï¼Œåªèƒ½ä¸²è¡Œï¼Œä¸€ä¸ªå¯åŠ¨å®Œæˆåï¼Œæ‰èƒ½å¯åŠ¨ä¸‹ä¸€ä¸ªæœåŠ¡ã€‚
 		try {
 			httpServer = SplxServerInIDE.getInstance();
 			if(hb) {
@@ -313,14 +313,14 @@ public class UnitServerConsole extends AppFrame implements StartUnitListener {
 	}
 
 	/**
-	 * Æô¶¯·şÎñÆ÷
+	 * å¯åŠ¨æœåŠ¡å™¨
 	 */
 	public synchronized void doStart() {
 		setServerStatus(true);
 		Thread t = new Thread() {
 			public void run() {
 				try {
-					enableStart(false);// ·ÀÖ¹ÖØ¸´´¥·¢
+					enableStart(false);// é˜²æ­¢é‡å¤è§¦å‘
 					clickStart();
 				} catch (Exception x) {
 					enableStart(true);
@@ -342,7 +342,7 @@ public class UnitServerConsole extends AppFrame implements StartUnitListener {
 					} catch (Exception x) {
 					}
 				}
-				if (server == unitServer) {// Í£Ö¹·Ö»úÊ±²ÅÇå³ı»·¾³
+				if (server == unitServer) {// åœæ­¢åˆ†æœºæ—¶æ‰æ¸…é™¤ç¯å¢ƒ
 					Env.clearParam();
 				}
 			}
@@ -361,11 +361,11 @@ public class UnitServerConsole extends AppFrame implements StartUnitListener {
 			if(server==currentServer) continue;
 			autoHaltServer( server );
 		}
-		doStop();//×îºóÍ£Ö¹µ±Ç°Ò³ÃæµÄ·şÎñÆ÷£¬Ë¢ĞÂ½çÃæ×´Ì¬
+		doStop();//æœ€ååœæ­¢å½“å‰é¡µé¢çš„æœåŠ¡å™¨ï¼Œåˆ·æ–°ç•Œé¢çŠ¶æ€
 	}
 	
 	/**
-	 * Í£Ö¹µ±Ç°Ò³ÃæµÄ·şÎñÆ÷
+	 * åœæ­¢å½“å‰é¡µé¢çš„æœåŠ¡å™¨
 	 */
 	public void doStop() {
 		jBStop.setEnabled(false);
@@ -382,7 +382,7 @@ public class UnitServerConsole extends AppFrame implements StartUnitListener {
 				jBReset.setEnabled(false);
 				jBStatus.setEnabled(false);
 				resetStatus(0);
-				if (currentServer == unitServer) {// Í£Ö¹·Ö»úÊ±²ÅÇå³ı»·¾³
+				if (currentServer == unitServer) {// åœæ­¢åˆ†æœºæ—¶æ‰æ¸…é™¤ç¯å¢ƒ
 					Env.clearParam();
 				}
 			}
@@ -409,7 +409,7 @@ public class UnitServerConsole extends AppFrame implements StartUnitListener {
 	}
 
 	/**
-	 * °´Å¥´¥·¢Æô¶¯·şÎñÆ÷
+	 * æŒ‰é’®è§¦å‘å¯åŠ¨æœåŠ¡å™¨
 	 * 
 	 * @return
 	 * @throws Exception
@@ -424,7 +424,7 @@ public class UnitServerConsole extends AppFrame implements StartUnitListener {
 		}
 
 		int index = tabServer.getSelectedIndex();
-		enableStart(false);// ·ÀÖ¹ÖØ¸´´¥·¢
+		enableStart(false);// é˜²æ­¢é‡å¤è§¦å‘
 		switch (index) {
 		case 0:
 			try {
@@ -555,7 +555,7 @@ public class UnitServerConsole extends AppFrame implements StartUnitListener {
 			public void actionPerformed(ActionEvent e) {
 				Env.clearParam();
 				DfxManager.getInstance().clear();
-				// ½çÃæ²Ù×÷Èç¹ûµÈ´ı·µ»Ø½á¹û£¬Ôò»áÔì³É½çÃæ±»ËøËÀ
+				// ç•Œé¢æ“ä½œå¦‚æœç­‰å¾…è¿”å›ç»“æœï¼Œåˆ™ä¼šé€ æˆç•Œé¢è¢«é”æ­»
 				UnitServer.init(0, 0, null, false);
 				System.gc();
 			}
@@ -879,7 +879,7 @@ public class UnitServerConsole extends AppFrame implements StartUnitListener {
 	}
 
 	/**
-	 * ¹©ÆóÒµ°æµ÷ÓÃ
+	 * ä¾›ä¼ä¸šç‰ˆè°ƒç”¨
 	 * @param args
 	 * @return [host,port,isGraph]
 	 */
@@ -922,7 +922,7 @@ public class UnitServerConsole extends AppFrame implements StartUnitListener {
 		return new Object[] {specifyHost,specifyPort,isGraph};
 	}
 	
-	// -b black ºÚ½çÃæ£¬¼´Æô¶¯ÎŞÍ¼ĞÎ½çÃæ
+	// -b black é»‘ç•Œé¢ï¼Œå³å¯åŠ¨æ— å›¾å½¢ç•Œé¢
 	public static void main(String[] args) {
 		Object[] obj = prepareArgs(args);
 		String specifyHost = (String)obj[0];
@@ -931,7 +931,7 @@ public class UnitServerConsole extends AppFrame implements StartUnitListener {
 		if (isGraph) {
 			ServerConsole.setDefaultLNF();
 			try {
-//				½ö¼ÓÔØÑ¡Ïî×ÖÌåµ½ÄÚ´æ£¬²»Ó¦ÓÃ£¬½çÃæÆô¶¯Ç°Ó¦ÓÃ×ÖÌå£»
+//				ä»…åŠ è½½é€‰é¡¹å­—ä½“åˆ°å†…å­˜ï¼Œä¸åº”ç”¨ï¼Œç•Œé¢å¯åŠ¨å‰åº”ç”¨å­—ä½“ï¼›
 				ConfigOptions.load2(false,false);
 			} catch (Throwable e) {
 				e.printStackTrace();
@@ -963,17 +963,17 @@ public class UnitServerConsole extends AppFrame implements StartUnitListener {
 	}
 
 	/**
-	 * ÖÃ¶¥µ±Ç°Ó¦ÓÃ³ÌĞò
+	 * ç½®é¡¶å½“å‰åº”ç”¨ç¨‹åº
 	 */
 	public void toTop() {
 		this.setAlwaysOnTop(true);
 	}
 
 	/**
-	 * ·şÎñÆ÷Æô¶¯ºó´¥·¢µÄÊÂ¼ş
+	 * æœåŠ¡å™¨å¯åŠ¨åè§¦å‘çš„äº‹ä»¶
 	 * 
 	 * @param atPort
-	 *            ·şÎñ¶Ë¿ÚºÅ
+	 *            æœåŠ¡ç«¯å£å·
 	 */
 	public synchronized void serverStarted(int atPort) {
 		resetButtons();

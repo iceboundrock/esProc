@@ -205,7 +205,7 @@ public class ControlUtilsBase {
 	}
 
 	/**
-	 * ÅĞ¶ÏÏÔÊ¾ÇøÓòÖĞÊÇ·ñ°üº¬µ¥Ôª¸ñÇøÓò
+	 * åˆ¤æ–­æ˜¾ç¤ºåŒºåŸŸä¸­æ˜¯å¦åŒ…å«å•å…ƒæ ¼åŒºåŸŸ
 	 * 
 	 * @param viewArea
 	 * @param cellArea
@@ -213,8 +213,8 @@ public class ControlUtilsBase {
 	 */
 	private static boolean containsArea(Rectangle viewArea, Rectangle cellArea) {
 		// return viewArea.contains(cellArea);
-		// Ö®Ç°È«²¿°üº¬²ÅËã°üº¬£¬ÕâÑù²»¶Ô£¬ÓĞ¿ÉÄÜ¸ñ×Ó±ÈÏÔÊ¾ÇøÓò¶¼´ó
-		// ÏÖÔÚ¸Ä³Éµ¥Ôª¸ñÇøÓòÖ»ÒªÓĞ²¿·ÖÔÚÏÔÊ¾ÇøÓòÄÚ¾ÍĞĞ
+		// ä¹‹å‰å…¨éƒ¨åŒ…å«æ‰ç®—åŒ…å«ï¼Œè¿™æ ·ä¸å¯¹ï¼Œæœ‰å¯èƒ½æ ¼å­æ¯”æ˜¾ç¤ºåŒºåŸŸéƒ½å¤§
+		// ç°åœ¨æ”¹æˆå•å…ƒæ ¼åŒºåŸŸåªè¦æœ‰éƒ¨åˆ†åœ¨æ˜¾ç¤ºåŒºåŸŸå†…å°±è¡Œ
 		if (viewArea == null || cellArea == null)
 			return false;
 		if (!isAreaCoincide(viewArea.x, viewArea.x + viewArea.width,
@@ -262,7 +262,7 @@ public class ControlUtilsBase {
 		Shape oldShape = g.getClip();
 		try {
 			Rectangle drawRect = oldShape.getBounds();
-			// ²»ÄÜ³ödrawRect·¶Î§
+			// ä¸èƒ½å‡ºdrawRectèŒƒå›´
 			int drawX = x;
 			int drawY = y;
 			int drawWidth = w;
@@ -349,7 +349,7 @@ public class ControlUtilsBase {
 	}
 
 	/**
-	 * ÔÚ¼¤»îµ±Ç°µ¥Ôª¸ñËùÔÚµÄĞĞÁĞÊ×¸ñµÄ±³¾°É«Óë±¨±íÏàÍ¬²»±äÁÁ
+	 * åœ¨æ¿€æ´»å½“å‰å•å…ƒæ ¼æ‰€åœ¨çš„è¡Œåˆ—é¦–æ ¼çš„èƒŒæ™¯è‰²ä¸æŠ¥è¡¨ç›¸åŒä¸å˜äº®
 	 * 
 	 * @param g
 	 *            Graphics
@@ -606,32 +606,32 @@ public class ControlUtilsBase {
 	}
 
 	/**
-	 * »æÖÆÎÄ±¾
+	 * ç»˜åˆ¶æ–‡æœ¬
 	 * 
 	 * @param g
 	 *            Graphics
 	 * @param text
-	 *            Òª»æÖÆµÄÎÄ±¾
+	 *            è¦ç»˜åˆ¶çš„æ–‡æœ¬
 	 * @param x
-	 *            X×ø±ê
+	 *            Xåæ ‡
 	 * @param y
-	 *            Y×ø±ê
+	 *            Yåæ ‡
 	 * @param w
-	 *            ¿í¶È
+	 *            å®½åº¦
 	 * @param h
-	 *            ¸ß¶È
+	 *            é«˜åº¦
 	 * @param underLine
-	 *            ÊÇ·ñÓĞÏÂ»®Ïß
+	 *            æ˜¯å¦æœ‰ä¸‹åˆ’çº¿
 	 * @param halign
-	 *            Ë®Æ½¶ÔÆë·½Ê½
+	 *            æ°´å¹³å¯¹é½æ–¹å¼
 	 * @param valign
-	 *            ÊúÖ±¶ÔÆë·½Ê½
+	 *            ç«–ç›´å¯¹é½æ–¹å¼
 	 * @param font
-	 *            ×ÖÌå
+	 *            å­—ä½“
 	 * @param c
-	 *            ÑÕÉ«
+	 *            é¢œè‰²
 	 * @param indent
-	 *            Ëõ½ø
+	 *            ç¼©è¿›
 	 * @return
 	 */
 	public static int drawText(Graphics g, String text, int x, int y, int w,
@@ -642,34 +642,34 @@ public class ControlUtilsBase {
 	}
 
 	/**
-	 * »æÖÆÎÄ±¾
+	 * ç»˜åˆ¶æ–‡æœ¬
 	 * 
 	 * @param g
 	 *            Graphics
 	 * @param text
-	 *            Òª»æÖÆµÄÎÄ±¾
+	 *            è¦ç»˜åˆ¶çš„æ–‡æœ¬
 	 * @param x
-	 *            X×ø±ê
+	 *            Xåæ ‡
 	 * @param y
-	 *            Y×ø±ê
+	 *            Yåæ ‡
 	 * @param w
-	 *            ¿í¶È
+	 *            å®½åº¦
 	 * @param h
-	 *            ¸ß¶È
+	 *            é«˜åº¦
 	 * @param underLine
-	 *            ÊÇ·ñÓĞÏÂ»®Ïß
+	 *            æ˜¯å¦æœ‰ä¸‹åˆ’çº¿
 	 * @param halign
-	 *            Ë®Æ½¶ÔÆë·½Ê½
+	 *            æ°´å¹³å¯¹é½æ–¹å¼
 	 * @param valign
-	 *            ÊúÖ±¶ÔÆë·½Ê½
+	 *            ç«–ç›´å¯¹é½æ–¹å¼
 	 * @param font
-	 *            ×ÖÌå
+	 *            å­—ä½“
 	 * @param c
-	 *            Ç°¾°É«
+	 *            å‰æ™¯è‰²
 	 * @param indent
-	 *            Ëõ½ø
+	 *            ç¼©è¿›
 	 * @param wordWrap
-	 *            »»ĞĞ
+	 *            æ¢è¡Œ
 	 * @return
 	 */
 	public static int drawText(Graphics g, String text, int x, int y, int w,
@@ -749,7 +749,7 @@ public class ControlUtilsBase {
 				if (yy > y + h) {
 					break;
 				}
-				if (i > 0 && (yy + lineH) > (y + h)) { // ·ÇµÚÒ»ĞĞ£¬µ×¶Ë³ö¸ñÒ²²»ÏÔÊ¾
+				if (i > 0 && (yy + lineH) > (y + h)) { // éç¬¬ä¸€è¡Œï¼Œåº•ç«¯å‡ºæ ¼ä¹Ÿä¸æ˜¾ç¤º
 					break;
 				}
 				String wrapedText = (String) al.get(i);
@@ -771,14 +771,14 @@ public class ControlUtilsBase {
 	}
 
 	/**
-	 * »ñµÃÄÜÔÚµ¥Ôª¸ñ¾ØĞÎ¿òÖĞÏÔÊ¾µÄÎÄ±¾
+	 * è·å¾—èƒ½åœ¨å•å…ƒæ ¼çŸ©å½¢æ¡†ä¸­æ˜¾ç¤ºçš„æ–‡æœ¬
 	 * 
 	 * @param text
-	 *            ÒªÏÔÊ¾µÄÎÄ±¾
+	 *            è¦æ˜¾ç¤ºçš„æ–‡æœ¬
 	 * @param fm
 	 *            FontMetrics
 	 * @param w
-	 *            ¿í¶È
+	 *            å®½åº¦
 	 * @return
 	 */
 	private static String getCanDisplayText(String text, FontMetrics fm, int w) {
@@ -810,18 +810,18 @@ public class ControlUtilsBase {
 	}
 
 	/**
-	 * ¼Ç×¡×Ö·ûµÄ¿í¶È£¬¼ÓËÙ»æÍ¼ËÙ¶È
+	 * è®°ä½å­—ç¬¦çš„å®½åº¦ï¼ŒåŠ é€Ÿç»˜å›¾é€Ÿåº¦
 	 */
 	private static HashMap<String, Integer> fmWidthBuf = new HashMap<String, Integer>();
 
 	/**
-	 * »ñÈ¡×Ö·û´®µÄÏÔÊ¾¿í¶È
+	 * è·å–å­—ç¬¦ä¸²çš„æ˜¾ç¤ºå®½åº¦
 	 * 
 	 * @param fm
 	 *            FontMetrics
 	 * @param text
-	 *            ÒªÏÔÊ¾µÄ×Ö·û´®
-	 * @return ¿í¶È
+	 *            è¦æ˜¾ç¤ºçš„å­—ç¬¦ä¸²
+	 * @return å®½åº¦
 	 */
 	public static int stringWidth(FontMetrics fm, String text) {
 		String key = fm.hashCode() + "," + text.hashCode();
@@ -838,24 +838,24 @@ public class ControlUtilsBase {
 	}
 
 	/**
-	 * »æÖÆÎÄ±¾£¬´¦ÀíÏÂ»®Ïß
+	 * ç»˜åˆ¶æ–‡æœ¬ï¼Œå¤„ç†ä¸‹åˆ’çº¿
 	 * 
 	 * @param g
-	 *            Graphics,µ±Ç°Êä³öµÄÍ¼ĞÎ¾ä±ú
+	 *            Graphics,å½“å‰è¾“å‡ºçš„å›¾å½¢å¥æŸ„
 	 * @param text
-	 *            String£¬Êä³öµÄÎÄ×Ö
+	 *            Stringï¼Œè¾“å‡ºçš„æ–‡å­—
 	 * @param x
-	 *            int£¬x×ø±ê
+	 *            intï¼Œxåæ ‡
 	 * @param y
-	 *            int£¬y×ø±ê
+	 *            intï¼Œyåæ ‡
 	 * @param w
-	 *            int£¬ÎÄ×Ö¿í¶È
+	 *            intï¼Œæ–‡å­—å®½åº¦
 	 * @param underLine
-	 *            boolean£¬ÊÇ·ñÓĞÏÂ»®Ïß
+	 *            booleanï¼Œæ˜¯å¦æœ‰ä¸‹åˆ’çº¿
 	 * @param font
-	 *            Font£¬×ÖÌå
+	 *            Fontï¼Œå­—ä½“
 	 * @param c
-	 *            Color£¬Ç°¾°É«
+	 *            Colorï¼Œå‰æ™¯è‰²
 	 * @param descent
 	 */
 	public static void outText(Graphics g, String text, int x, int y, int w,
@@ -876,18 +876,18 @@ public class ControlUtilsBase {
 	}
 
 	/**
-	 * »æÖÆ×Ö·û´®
+	 * ç»˜åˆ¶å­—ç¬¦ä¸²
 	 * 
 	 * @param g
-	 *            »­²¼
+	 *            ç”»å¸ƒ
 	 * @param text
-	 *            Òª»æÖÆµÄÎÄ±¾
+	 *            è¦ç»˜åˆ¶çš„æ–‡æœ¬
 	 * @param x
-	 *            X×ø±ê
+	 *            Xåæ ‡
 	 * @param y
-	 *            Y×ø±ê
+	 *            Yåæ ‡
 	 * @param w
-	 *            ¿í¶È
+	 *            å®½åº¦
 	 */
 	public static int drawString(Graphics g, String text, int x, int y, int w) {
 		Vector v = calcCharactersX2(text, x, g.getFont(), w);
@@ -899,7 +899,7 @@ public class ControlUtilsBase {
 
 	private static void drawString(Graphics g, String text, int[] xx, int y) {
 		// g.drawString(text, x, y);
-		// Óöµ½µ±Ç°×ÖÌåÎŞ·¨ÏÔÊ¾µÄ×Ö·û£¬³¢ÊÔÇĞ»»³ÉDialog×ÖÌåÀ´ÏÔÊ¾
+		// é‡åˆ°å½“å‰å­—ä½“æ— æ³•æ˜¾ç¤ºçš„å­—ç¬¦ï¼Œå°è¯•åˆ‡æ¢æˆDialogå­—ä½“æ¥æ˜¾ç¤º
 		Font fontOld = g.getFont();
 		int[] codePoints = getCodePoints(text);
 		int count = codePoints.length;
@@ -908,7 +908,7 @@ public class ControlUtilsBase {
 
 		for (int i = 0; i < count; i++) {
 			boolean changeFont = false;
-			if (!isDialogFont) { // ÒÑ¾­ÊÇDialog¾Í²»»»ÁË
+			if (!isDialogFont) { // å·²ç»æ˜¯Dialogå°±ä¸æ¢äº†
 				if (!fontOld.canDisplay(codePoints[i])) {
 					changeFont = true;
 					if (fontDialog == null) {
@@ -928,7 +928,7 @@ public class ControlUtilsBase {
 	public static int[] getCodePoints(String text) {
 		if (text == null)
 			return null;
-		// return text.codePoints().toArray(); // 1.8µÄ½Ó¿Ú
+		// return text.codePoints().toArray(); // 1.8çš„æ¥å£
 		int count = text.codePointCount(0, text.length());
 		int len = text.length();
 		int[] codePoints = new int[count];
@@ -952,7 +952,7 @@ public class ControlUtilsBase {
 	}
 
 	/**
-	 * ¿¼ÂÇÀ©Õ¹×ÖÌå£¬»¹ÓĞ×ÖÌå²»Ö§³Ö×Ö·ûÊ±ÇĞ»»×ÖÌåµÄÇé¿ö¡£
+	 * è€ƒè™‘æ‰©å±•å­—ä½“ï¼Œè¿˜æœ‰å­—ä½“ä¸æ”¯æŒå­—ç¬¦æ—¶åˆ‡æ¢å­—ä½“çš„æƒ…å†µã€‚
 	 * 
 	 * @param text
 	 * @param x
@@ -1002,7 +1002,7 @@ public class ControlUtilsBase {
 	};
 
 	public static Graphics getDisplayGraphics() {
-		if (tlDisplayG == null) {// Ä³Ğ© ÷è÷ë»úÆ÷Ê±£¬ ±¨±äÁ¿null´íÎó£¬¼Ó¸öÅĞ¶Ï 2021Äê7ÔÂ29ÈÕ
+		if (tlDisplayG == null) {// æŸäº› éº’éºŸæœºå™¨æ—¶ï¼Œ æŠ¥å˜é‡nullé”™è¯¯ï¼ŒåŠ ä¸ªåˆ¤æ–­ 2021å¹´7æœˆ29æ—¥
 			BufferedImage bi = new BufferedImage(10, 10,
 					BufferedImage.TYPE_INT_RGB);
 			return bi.getGraphics();
@@ -1011,22 +1011,22 @@ public class ControlUtilsBase {
 	}
 
 	/**
-	 * »æÖÆÎÄ±¾£¬´¦ÀíÏÂ»®Ïß
+	 * ç»˜åˆ¶æ–‡æœ¬ï¼Œå¤„ç†ä¸‹åˆ’çº¿
 	 * 
 	 * @param g
-	 *            »­²¼
+	 *            ç”»å¸ƒ
 	 * @param text
-	 *            Òª»æÖÆµÄÎÄ±¾
+	 *            è¦ç»˜åˆ¶çš„æ–‡æœ¬
 	 * @param x
-	 *            X×ø±ê
+	 *            Xåæ ‡
 	 * @param y
-	 *            Y×ø±ê
+	 *            Yåæ ‡
 	 * @param w
-	 *            ¿í¶È
+	 *            å®½åº¦
 	 * @param descent
 	 *            Font descent
 	 * @param underLine
-	 *            ÊÇ·ñÓĞÏÂ»®Ïß
+	 *            æ˜¯å¦æœ‰ä¸‹åˆ’çº¿
 	 */
 	// private static void drawText(Graphics g, String text, int x, int y, int
 	// w,
@@ -1045,31 +1045,31 @@ public class ControlUtilsBase {
 	// }
 
 	/**
-	 * ¿ÕÁĞ±í
+	 * ç©ºåˆ—è¡¨
 	 */
 	private static ArrayList<String> emptyArrayList = new ArrayList<String>();
 
 	/**
-	 * »º´æÎÄ±¾ÕÛĞĞµÄÓ³Éä±í¡£KEYÊÇ×Ö·û´®£¬VALUEÊÇÕÛĞĞºóµÄÎÄ±¾ÁĞ±í
+	 * ç¼“å­˜æ–‡æœ¬æŠ˜è¡Œçš„æ˜ å°„è¡¨ã€‚KEYæ˜¯å­—ç¬¦ä¸²ï¼ŒVALUEæ˜¯æŠ˜è¡Œåçš„æ–‡æœ¬åˆ—è¡¨
 	 */
 	public static HashMap<String, ArrayList<String>> wrapStringBuffer = new HashMap<String, ArrayList<String>>();
 
 	/**
-	 * ÇåÀíÎÄ±¾ÕÛĞĞ»º´æ
+	 * æ¸…ç†æ–‡æœ¬æŠ˜è¡Œç¼“å­˜
 	 */
 	public static void clearWrapBuffer() {
 		wrapStringBuffer.clear();
 	}
 
 	/**
-	 * ÕÛĞĞ
+	 * æŠ˜è¡Œ
 	 * 
 	 * @param text
-	 *            ÒªÕÛĞĞµÄÎÄ±¾
+	 *            è¦æŠ˜è¡Œçš„æ–‡æœ¬
 	 * @param fm
 	 *            FontMetrics
 	 * @param w
-	 *            ¿í¶È
+	 *            å®½åº¦
 	 * @return
 	 */
 	public static ArrayList<String> wrapString(String text, FontMetrics fm,
@@ -1078,16 +1078,16 @@ public class ControlUtilsBase {
 	}
 
 	/**
-	 * ÕÛĞĞ
+	 * æŠ˜è¡Œ
 	 * 
 	 * @param text
-	 *            ÒªÕÛĞĞµÄÎÄ±¾
+	 *            è¦æŠ˜è¡Œçš„æ–‡æœ¬
 	 * @param fm
 	 *            FontMetrics
 	 * @param w
-	 *            ¿í¶È
+	 *            å®½åº¦
 	 * @param maxRow
-	 *            ×î´óĞĞÊı(³¬¹ı´ËĞĞÊıµÄ¾Í²»ÒªÁË)
+	 *            æœ€å¤§è¡Œæ•°(è¶…è¿‡æ­¤è¡Œæ•°çš„å°±ä¸è¦äº†)
 	 * @return
 	 */
 	public static ArrayList<String> wrapString(String text, FontMetrics fm,
@@ -1116,8 +1116,8 @@ public class ControlUtilsBase {
 						return wrapedString;
 					}
 				} else {
-					// ÔÚjdk6£¬New Times Roman×ÖÌåÊ¹ÓÃLineBreakMeasurer³öÏÖjvmÍË³öÒì³£¡£
-					// ¸ã²»Çå³ş×îÔçÊÇÊ²Ã´Ê±ºòÊ¹ÓÃµÄLineBreakMeasurer£¬ÔİÊ±Ìæ»»³É±¨±íµÄÕÛĞĞ·½·¨¡£wunan
+					// åœ¨jdk6ï¼ŒNew Times Romanå­—ä½“ä½¿ç”¨LineBreakMeasurerå‡ºç°jvmé€€å‡ºå¼‚å¸¸ã€‚
+					// æä¸æ¸…æ¥šæœ€æ—©æ˜¯ä»€ä¹ˆæ—¶å€™ä½¿ç”¨çš„LineBreakMeasurerï¼Œæš‚æ—¶æ›¿æ¢æˆæŠ¥è¡¨çš„æŠ˜è¡Œæ–¹æ³•ã€‚wunan
 					// 2018-05-29
 					wrapedString = StringUtils2.wrapString(text, fm, w, false,
 							maxRow);
@@ -1187,12 +1187,12 @@ public class ControlUtilsBase {
 	}
 
 	/**
-	 * ¼ì²é¸ñ×Ó×ø±ê
+	 * æ£€æŸ¥æ ¼å­åæ ‡
 	 * 
 	 * @param cp
-	 *            ¸ñ×Ó×ø±ê
+	 *            æ ¼å­åæ ‡
 	 * @param ics
-	 *            Íø¸ñ¶ÔÏó
+	 *            ç½‘æ ¼å¯¹è±¡
 	 * @return
 	 */
 	public static CellLocation checkPosition(CellLocation cp, ICellSet ics) {
@@ -1235,12 +1235,12 @@ public class ControlUtilsBase {
 	}
 
 	/**
-	 * µ±Ç°¸ñµÄ±³¾°É«
+	 * å½“å‰æ ¼çš„èƒŒæ™¯è‰²
 	 */
 	public static Color ACTIVE_BACK_COLOR = new Color(0x80, 0xA0, 0xC0);
 
 	/**
-	 * Ñ¡ÔñĞĞÁĞµÄ±³¾°É«
+	 * é€‰æ‹©è¡Œåˆ—çš„èƒŒæ™¯è‰²
 	 */
 	public static Color SELECTED_BACK_COLOR = new Color(0x99, 0x99, 0x66);
 }

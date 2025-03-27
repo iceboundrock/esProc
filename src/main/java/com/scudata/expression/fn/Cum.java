@@ -11,8 +11,8 @@ import com.scudata.resources.EngineMessage;
 import com.scudata.util.Variant;
 
 /**
- * Ñ­»·º¯ÊıÖĞµü´úÔËËã£¬¶ÔÓĞÏàÍ¬×Ö¶ÎÖµµÄ³ÉÔ±ÀÛ»ı
- * cum(x; Gi,¡­)	iterate(~~+x;Gi,¡­)
+ * å¾ªç¯å‡½æ•°ä¸­è¿­ä»£è¿ç®—ï¼Œå¯¹æœ‰ç›¸åŒå­—æ®µå€¼çš„æˆå‘˜ç´¯ç§¯
+ * cum(x; Gi,â€¦)	iterate(~~+x;Gi,â€¦)
  * @author runqian
  *
  */
@@ -29,7 +29,7 @@ public class Cum extends Function {
 	}
 	
 	/**
-	 * ¼ì²é±í´ïÊ½µÄÓĞĞ§ĞÔ£¬ÎŞĞ§ÔòÅ×³öÒì³£
+	 * æ£€æŸ¥è¡¨è¾¾å¼çš„æœ‰æ•ˆæ€§ï¼Œæ— æ•ˆåˆ™æŠ›å‡ºå¼‚å¸¸
 	 */
 	public void checkValidity() {
 		if (param == null) {

@@ -225,7 +225,7 @@ public class GC {
 	/** Recent connections */
 	public static final String RECENT_CONNS = "file.recentconns";
 	/** Quit */
-	public static final String QUIT = "file.quit"; // ÍË³ö
+	public static final String QUIT = "file.quit"; // é€€å‡º
 	/** New */
 	public static final short iNEW = 5;
 	/** Open */
@@ -372,7 +372,7 @@ public class GC {
 	 * Date formats used for display
 	 */
 	public static final String[] DATE_FORMATS = LANGUAGE == ASIAN_CHINESE ? new String[] {
-			"yyyy-MM-dd", "yyyyÄêMMÔÂddÈÕ", "yyyy/MM/dd", "yy-MM-dd", "yyÄêMMÔÂddÈÕ",
+			"yyyy-MM-dd", "yyyyå¹´MMæœˆddæ—¥", "yyyy/MM/dd", "yy-MM-dd", "yyå¹´MMæœˆddæ—¥",
 			"yy/MM/dd" }
 			: new String[] { "yyyy-MM-dd", "yyyy/MM/dd", "yy-MM-dd", "yy/MM/dd" };
 	/**
@@ -385,8 +385,8 @@ public class GC {
 	 * Date time formats used for display
 	 */
 	public static final String[] DATE_TIME_FORMATS = LANGUAGE == ASIAN_CHINESE ? new String[] {
-			"yyyy-MM-dd HH:mm:ss", "yyyyÄêMMÔÂddÈÕ HH:mm:ss",
-			"yyyy/MM/dd HH:mm:ss", "yy-MM-dd HH:mm:ss", "yyÄêMMÔÂddÈÕ HH:mm:ss",
+			"yyyy-MM-dd HH:mm:ss", "yyyyå¹´MMæœˆddæ—¥ HH:mm:ss",
+			"yyyy/MM/dd HH:mm:ss", "yy-MM-dd HH:mm:ss", "yyå¹´MMæœˆddæ—¥ HH:mm:ss",
 			"yy/MM/dd HH:mm:ss" }
 			: new String[] { "yyyy-MM-dd HH:mm:ss", "yyyy/MM/dd HH:mm:ss",
 					"yy-MM-dd HH:mm:ss", "yy/MM/dd HH:mm:ss" };
@@ -445,7 +445,7 @@ public class GC {
 	 */
 	public static final short MENU_SPL = 1000;
 	/**
-	 * EsProc¡¯s pop-up menu adds this constant
+	 * EsProcâ€™s pop-up menu adds this constant
 	 */
 	public static final short POPMENU_SPL = 3000;
 
@@ -509,7 +509,7 @@ public class GC {
 	public static final String LAST_DIR = "fileDirectory";
 
 	/**
-	 * NULLµÄÏÔÊ¾Öµ
+	 * NULLçš„æ˜¾ç¤ºå€¼
 	 */
 	public static String DISP_NULL = "(null)";
 }
