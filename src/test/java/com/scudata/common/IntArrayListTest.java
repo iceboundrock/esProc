@@ -51,7 +51,7 @@ public class IntArrayListTest {
 
     @Test
     void addAllNull() {
-        assertFalse(list.addAll(null));
+        assertFalse(list.addAll((int[]) null));
     }
 
     @Test

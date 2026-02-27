@@ -181,7 +181,7 @@ class HashUtilTest {
     @DisplayName("Static hashCode(Object, int) returns non-negative and 0 for null")
     void hashCodeStaticObjectCapacity() {
         // null returns 0
-        assertEquals(0, HashUtil.hashCode(null, 100));
+        assertEquals(0, HashUtil.hashCode((Object) null, 100));
 
         // Non-null
         int h = HashUtil.hashCode("test", 100);

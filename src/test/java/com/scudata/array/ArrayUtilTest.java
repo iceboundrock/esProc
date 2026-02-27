@@ -249,7 +249,7 @@ public class ArrayUtilTest {
 			target.add(4);
 			target.add(5);
 
-			IntArray result = ArrayUtil.pos(src, target, null);
+			IntArray result = (IntArray) ArrayUtil.pos(src, target, null);
 			assertNotNull(result);
 			assertEquals(2, result.size());
 			// Position of 2 in target is 2, position of 4 is 4
@@ -269,7 +269,7 @@ public class ArrayUtilTest {
 				target.add(i);
 			}
 
-			IntArray result = ArrayUtil.pos(src, target, "b");
+			IntArray result = (IntArray) ArrayUtil.pos(src, target, "b");
 			assertNotNull(result);
 			assertEquals(2, result.size());
 			assertEquals(3, result.getInt(1));
