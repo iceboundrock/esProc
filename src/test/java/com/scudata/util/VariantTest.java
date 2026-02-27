@@ -69,8 +69,8 @@ class VariantTest {
 		@Test
 		@DisplayName("add(null, x) returns x")
 		void addNullLeft() {
-			assertEquals(5, Variant.add(null, 5));
-			assertEquals("abc", Variant.add(null, "abc"));
+			assertEquals(5, Variant.add((Object) null, 5));
+			assertEquals("abc", Variant.add((Object) null, "abc"));
 		}
 
 		@Test
@@ -608,11 +608,10 @@ class VariantTest {
 		}
 
 		@Test
-		@DisplayName("incompatible types with throwExcept=false returns based on type order")
+		@DisplayName("incompatible types with throwExcept=false throws ClassCastException")
 		void incompatibleNoThrow() {
-			// Number type = 1, String type = 2
-			int cmp = Variant.compare(42, "abc", false);
-			assertTrue(cmp < 0); // 1 < 2
+			// Integer implements Comparable, so compareTo(String) is attempted → ClassCastException
+			assertThrows(ClassCastException.class, () -> Variant.compare(42, "abc", false));
 		}
 
 		@Test

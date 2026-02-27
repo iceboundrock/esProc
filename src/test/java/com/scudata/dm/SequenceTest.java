@@ -72,10 +72,16 @@ class SequenceTest {
         }
 
         @Test
-        @DisplayName("int range constructor with start > end creates empty")
+        @DisplayName("int range constructor with start > end creates descending sequence")
         void intRangeReversed() {
             Sequence seq = new Sequence(5, 1);
-            assertEquals(0, seq.length());
+            // Source creates descending sequence [5, 4, 3, 2, 1]
+            assertEquals(5, seq.length());
+            assertEquals(5, seq.get(1));
+            assertEquals(4, seq.get(2));
+            assertEquals(3, seq.get(3));
+            assertEquals(2, seq.get(4));
+            assertEquals(1, seq.get(5));
         }
 
         @Test

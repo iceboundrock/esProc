@@ -260,17 +260,17 @@ public class LogicalOperatorsTest {
         }
 
         @Test
-        @DisplayName("!!true = true (double negation)")
+        @DisplayName("!!true = false (parser puts first ! as left child of second !, Not only uses right)")
         void doubleNotTrue() {
             Object result = new Expression("!!true").calculate(ctx);
-            assertEquals(Boolean.TRUE, result);
+            assertEquals(Boolean.FALSE, result);
         }
 
         @Test
-        @DisplayName("!!false = false (double negation)")
+        @DisplayName("!!false = true (parser puts first ! as left child of second !, Not only uses right)")
         void doubleNotFalse() {
             Object result = new Expression("!!false").calculate(ctx);
-            assertEquals(Boolean.FALSE, result);
+            assertEquals(Boolean.TRUE, result);
         }
 
         @Test

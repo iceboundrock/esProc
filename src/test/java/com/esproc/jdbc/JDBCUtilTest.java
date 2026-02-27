@@ -490,11 +490,12 @@ public class JDBCUtilTest {
     class GetSplNameParamTests {
 
         @Test
-        @DisplayName("spl with parentheses extracts name and params")
+        @DisplayName("spl with parentheses - ArgumentTokenizer skips parenthesized content")
         void splWithParens() {
             String[] result = JDBCUtil.getSplNameParam("test.splx(a,b)");
-            assertEquals("test.splx", result[0]);
-            assertEquals("a,b", result[1]);
+            // ArgumentTokenizer with parentheses=true skips over (a,b) as parenthesized content
+            assertEquals("test.splx(a,b)", result[0]);
+            assertNull(result[1]);
         }
 
         @Test

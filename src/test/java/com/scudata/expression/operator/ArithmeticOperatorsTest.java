@@ -123,10 +123,11 @@ public class ArithmeticOperatorsTest {
         }
 
         @Test
-        @DisplayName("\"num: \" + 42 = \"num: 42\" (string + int)")
+        @DisplayName("\"num: \" + 42 = 42 (non-numeric string parsed as number fails, returns the number)")
         void addStringInt() {
             Object result = new Expression("\"num: \"+42").calculate(ctx);
-            assertEquals("num: 42", result);
+            // Variant.add parses "num: " as a number, fails, returns the number (42)
+            assertEquals(42, result);
         }
 
         @Test

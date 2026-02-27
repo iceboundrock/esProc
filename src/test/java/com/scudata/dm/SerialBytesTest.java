@@ -51,7 +51,7 @@ class SerialBytesTest {
     @DisplayName("Number constructor with len <= 8 stores value in value1 shifted left")
     void numberConstructorSmallLen() {
         // Number 0x0102 with len=2 should be shifted to highest 2 bytes of value1
-        SerialBytes sb = new SerialBytes(0x0102L, 2);
+        SerialBytes sb = new SerialBytes((Number)(Long)0x0102L, 2);
         assertEquals(0x0102000000000000L, sb.getValue1());
         assertEquals(0L, sb.getValue2());
     }
@@ -60,7 +60,7 @@ class SerialBytesTest {
     @DisplayName("Number constructor with len > 8 distributes across value1 and value2")
     void numberConstructorLargeLen() {
         // Use a value that fits in 9 bytes
-        SerialBytes sb = new SerialBytes(1L, 9);
+        SerialBytes sb = new SerialBytes((Number)(Long)1L, 9);
         // 1 as a BigInteger is [0x01], 9-byte len means 8 zero bytes then 0x01
         // index goes: len - blen = 9 - 1 = 8 zero bytes prefix, then byte 0x01 at index 9
         // index 9 goes to value2: (0xFF & 0x01) << (16-9)*8 = 0x01 << 56
@@ -71,7 +71,7 @@ class SerialBytesTest {
     @Test
     @DisplayName("Number constructor throws RQException when len > 16")
     void numberConstructorLenExceedsLimit() {
-        assertThrows(RQException.class, () -> new SerialBytes(42, 17));
+        assertThrows(RQException.class, () -> new SerialBytes((Number)(Integer)42, 17));
     }
 
     @Test
@@ -309,7 +309,7 @@ class SerialBytesTest {
 
         // Non-SerialBytes object
         assertFalse(a.equals("not a SerialBytes"));
-        assertFalse(a.equals(null));
+        assertThrows(NullPointerException.class, () -> a.equals(null));
         assertFalse(a.equals(10L));
     }
 

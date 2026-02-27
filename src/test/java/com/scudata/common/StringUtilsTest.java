@@ -231,7 +231,7 @@ class StringUtilsTest {
     @Test
     @DisplayName("replace: replaces all occurrences")
     void replace_allOccurrences() {
-        assertEquals("hXllX", StringUtils.replace("hello", "e", "X").equals("hXllo") ? "hXllo" : "unexpected");
+        assertEquals("hXllo", StringUtils.replace("hello", "e", "X"));
         assertEquals("aXcXe", StringUtils.replace("abcbe", "b", "X"));
     }
 
@@ -468,7 +468,7 @@ class StringUtilsTest {
     @Test
     @DisplayName("indexOfIgnoreCase: respects fromIndex")
     void indexOfIgnoreCase_fromIndex() {
-        assertEquals(6, StringUtils.indexOfIgnoreCase("abcabcabc", "abc", 1));
+        assertEquals(3, StringUtils.indexOfIgnoreCase("abcabcabc", "abc", 1));
         assertEquals(3, StringUtils.indexOfIgnoreCase("abcABCabc", "abc", 1));
     }
 

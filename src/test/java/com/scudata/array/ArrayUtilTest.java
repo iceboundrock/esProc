@@ -58,10 +58,10 @@ public class ArrayUtilTest {
 		}
 
 		@Test
-		@DisplayName("Other type creates ObjectArray")
-		void otherCreatesObjectArray() {
+		@DisplayName("Date type creates DateArray")
+		void dateCreatesDateArray() {
 			IArray arr = ArrayUtil.newArray(new java.util.Date(), 10);
-			assertTrue(arr instanceof ObjectArray);
+			assertTrue(arr instanceof DateArray);
 		}
 
 		@Test
@@ -236,44 +236,44 @@ public class ArrayUtilTest {
 	class Pos {
 
 		@Test
-		@DisplayName("pos finds positions of src elements in target array")
+		@DisplayName("pos finds positions of target elements in src array")
 		void posBasic() {
 			ObjectArray src = new ObjectArray();
+			src.add(1);
 			src.add(2);
+			src.add(3);
 			src.add(4);
+			src.add(5);
 
 			ObjectArray target = new ObjectArray();
-			target.add(1);
 			target.add(2);
-			target.add(3);
 			target.add(4);
-			target.add(5);
 
-			IntArray result = (IntArray) ArrayUtil.pos(src, target, null);
+			Sequence result = (Sequence) ArrayUtil.pos(src, target, null);
 			assertNotNull(result);
-			assertEquals(2, result.size());
-			// Position of 2 in target is 2, position of 4 is 4
-			assertEquals(2, result.getInt(1));
-			assertEquals(4, result.getInt(2));
+			assertEquals(2, result.length());
+			// Position of 2 in src is 2, position of 4 is 4
+			assertEquals(2, result.get(1));
+			assertEquals(4, result.get(2));
 		}
 
 		@Test
 		@DisplayName("pos with 'b' option for binary search on sorted array")
 		void posBinarySearch() {
 			ObjectArray src = new ObjectArray();
-			src.add(3);
-			src.add(5);
-
-			ObjectArray target = new ObjectArray();
 			for (int i = 1; i <= 10; i++) {
-				target.add(i);
+				src.add(i);
 			}
 
-			IntArray result = (IntArray) ArrayUtil.pos(src, target, "b");
+			ObjectArray target = new ObjectArray();
+			target.add(3);
+			target.add(5);
+
+			Sequence result = (Sequence) ArrayUtil.pos(src, target, "b");
 			assertNotNull(result);
-			assertEquals(2, result.size());
-			assertEquals(3, result.getInt(1));
-			assertEquals(5, result.getInt(2));
+			assertEquals(2, result.length());
+			assertEquals(3, result.get(1));
+			assertEquals(5, result.get(2));
 		}
 	}
 }

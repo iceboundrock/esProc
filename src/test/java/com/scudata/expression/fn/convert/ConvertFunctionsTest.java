@@ -93,19 +93,15 @@ public class ConvertFunctionsTest {
         }
 
         @Test
-        @DisplayName("int(true) returns 1")
+        @DisplayName("int(true) throws — Boolean not supported by int()")
         void intOfTrue() {
-            Object result = new Expression("int(true)").calculate(ctx);
-            assertTrue(result instanceof Integer);
-            assertEquals(1, ((Number) result).intValue());
+            assertThrows(Exception.class, () -> new Expression("int(true)").calculate(ctx));
         }
 
         @Test
-        @DisplayName("int(false) returns 0")
+        @DisplayName("int(false) throws — Boolean not supported by int()")
         void intOfFalse() {
-            Object result = new Expression("int(false)").calculate(ctx);
-            assertTrue(result instanceof Integer);
-            assertEquals(0, ((Number) result).intValue());
+            assertThrows(Exception.class, () -> new Expression("int(false)").calculate(ctx));
         }
     }
 

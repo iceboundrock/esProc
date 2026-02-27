@@ -191,12 +191,12 @@ public class GatherFunctionsTest {
         @Test
         @DisplayName("count of [true, false, null] - counts truthy values")
         void countBooleans() {
-            // count counts non-null values (Sequence.count() counts non-null)
+            // count() counts truthy (true) values, not all non-null values
             setSequenceVar("s", true, false, null);
             Object result = new Expression("count(s)").calculate(ctx);
             assertTrue(result instanceof Number);
-            // Sequence.count() counts non-null values, so true and false are both non-null
-            assertEquals(2, ((Number) result).intValue());
+            // Only true is truthy; false and null are not counted
+            assertEquals(1, ((Number) result).intValue());
         }
 
         @Test

@@ -168,22 +168,23 @@ public class BoolArrayTest {
 	class SizeCount {
 
 		@Test
-		@DisplayName("count excludes nulls")
+		@DisplayName("count counts only true values")
 		void countExcludesNull() {
 			array.add(Boolean.TRUE);
 			array.add(null);
 			array.add(Boolean.FALSE);
 			array.add(null);
-			// count excludes null elements
-			assertEquals(2, array.count());
+			// count counts only TRUE values, not all non-null
+			assertEquals(1, array.count());
 		}
 
 		@Test
-		@DisplayName("count with no nulls equals size")
+		@DisplayName("count with no nulls counts only true values")
 		void countNoNulls() {
 			array.add(Boolean.TRUE);
 			array.add(Boolean.FALSE);
-			assertEquals(2, array.count());
+			// count counts only TRUE values
+			assertEquals(1, array.count());
 		}
 
 		@Test

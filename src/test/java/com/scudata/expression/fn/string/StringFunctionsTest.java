@@ -290,19 +290,19 @@ public class StringFunctionsTest {
 		@Test
 		@DisplayName("replace basic substring")
 		void replaceBasic() {
-			assertEquals("hxllo", eval("replace(\"hello\",2,1,\"x\")"));
+			assertEquals("hxllo", eval("replace(\"hello\",2:1,\"x\")"));
 		}
 
 		@Test
 		@DisplayName("replace with longer string")
 		void replaceLonger() {
-			assertEquals("hxxxllo", eval("replace(\"hello\",2,1,\"xxx\")"));
+			assertEquals("hxxxllo", eval("replace(\"hello\",2:1,\"xxx\")"));
 		}
 
 		@Test
 		@DisplayName("replace of null returns null")
 		void replaceNull() {
-			assertNull(eval("replace(null,1,1,\"x\")"));
+			assertNull(eval("replace(null,1:1,\"x\")"));
 		}
 	}
 
